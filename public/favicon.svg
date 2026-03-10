@@ -1,0 +1,41 @@
+<svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="ballGrad" cx="35%" cy="28%" r="70%">
+      <stop offset="0%"   stop-color="#F6FF7A"/>
+      <stop offset="30%"  stop-color="#D4E832"/>
+      <stop offset="75%"  stop-color="#9DB81A"/>
+      <stop offset="100%" stop-color="#637808"/>
+    </radialGradient>
+    <radialGradient id="holeDepth" cx="30%" cy="30%" r="70%">
+      <stop offset="0%"   stop-color="#2a3d04"/>
+      <stop offset="100%" stop-color="#0f1801"/>
+    </radialGradient>
+    <radialGradient id="rimDark" cx="50%" cy="50%" r="50%">
+      <stop offset="60%"  stop-color="black" stop-opacity="0"/>
+      <stop offset="100%" stop-color="black" stop-opacity="0.45"/>
+    </radialGradient>
+    <clipPath id="ballClip">
+      <circle cx="50" cy="50" r="46"/>
+    </clipPath>
+  </defs>
+
+  <circle cx="50" cy="50" r="46" fill="url(#ballGrad)"/>
+
+  <g clip-path="url(#ballClip)">
+    <circle cx="50" cy="26" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="68" cy="34" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="74" cy="53" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="64" cy="70" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="46" cy="76" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="29" cy="66" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="24" cy="47" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="34" cy="31" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="53" cy="50" r="6.2" fill="url(#holeDepth)"/>
+    <circle cx="38" cy="53" r="6.2" fill="url(#holeDepth)"/>
+  </g>
+
+  <circle cx="50" cy="50" r="46" fill="url(#rimDark)" clip-path="url(#ballClip)"/>
+  <ellipse cx="37" cy="31" rx="14" ry="9" fill="white" opacity="0.38" transform="rotate(-30 37 31)" clip-path="url(#ballClip)"/>
+  <ellipse cx="42" cy="27" rx="5" ry="3" fill="white" opacity="0.55" transform="rotate(-30 42 27)" clip-path="url(#ballClip)"/>
+  <circle cx="50" cy="50" r="46" fill="none" stroke="#5a7a0a" stroke-width="1.2"/>
+</svg>

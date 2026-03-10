@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "PickleInstructions — Learn From the Pros",
   description:
     "World-class pickleball instructionals from the top players in the game. Master your dink, drive, serve, and strategy. Launching soon.",
+  icons: {
+    icon: "/favicon.svg",
+    shortcut: "/favicon.svg",
+  },
   openGraph: {
     title: "PickleInstructions — Learn From the Pros",
     description:
