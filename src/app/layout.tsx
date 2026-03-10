@@ -8,13 +8,13 @@ const geistSans = Geist({
 });
 
 export const metadata: Metadata = {
-  title: "PickleInstructions — Master Your Pickleball Game",
+  title: "PickleInstructions — Learn From the Pros",
   description:
-    "Premium pickleball instructionals from the world's top pros. Learn strategy, technique, and mental game from the best in the sport.",
+    "World-class pickleball instructionals from the top players in the game. Master your dink, drive, serve, and strategy. Launching soon.",
   openGraph: {
-    title: "PickleInstructions — Master Your Pickleball Game",
+    title: "PickleInstructions — Learn From the Pros",
     description:
-      "Premium pickleball instructionals from the world's top pros.",
+      "World-class pickleball instructionals from the top players in the game.",
     url: "https://pickleinstructions.com",
     siteName: "PickleInstructions",
     type: "website",

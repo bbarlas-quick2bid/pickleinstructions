@@ -2,31 +2,51 @@
 
 import { useState } from "react";
 
-const FEATURES = [
+const INSTRUCTORS = [
   {
-    icon: "🎯",
-    title: "Pro-Level Technique",
-    description:
-      "Step-by-step breakdowns of every shot — dink, drive, reset, ATP — taught by touring pros.",
+    name: "Coming Soon",
+    title: "Pro Tour Player",
+    specialty: "The Kitchen Game",
+    emoji: "🏆",
   },
   {
-    icon: "🧠",
-    title: "Mental Game & Strategy",
-    description:
-      "Win more by thinking smarter. Learn pattern recognition, court positioning, and match IQ.",
+    name: "Coming Soon",
+    title: "National Champion",
+    specialty: "Power & Pace",
+    emoji: "⚡",
   },
   {
-    icon: "📹",
-    title: "HD Video Instructionals",
-    description:
-      "Multi-angle, slow-motion footage so you can see exactly what the best players do differently.",
+    name: "Coming Soon",
+    title: "Top 10 Ranked",
+    specialty: "Doubles Strategy",
+    emoji: "🎯",
   },
   {
-    icon: "⚡",
-    title: "Any Level, Any Goal",
-    description:
-      "From 3.0 to 5.0+, we'll have content built for where you are and where you want to go.",
+    name: "Coming Soon",
+    title: "Certified Coach",
+    specialty: "The Mental Game",
+    emoji: "🧠",
   },
+];
+
+const CATEGORIES = [
+  { label: "Dinking & Kitchen", icon: "🥒", count: "Coming Soon" },
+  { label: "Serving & Return", icon: "🎾", count: "Coming Soon" },
+  { label: "Doubles Strategy", icon: "🤝", count: "Coming Soon" },
+  { label: "Bangers & Drives", icon: "💥", count: "Coming Soon" },
+  { label: "Reset & Defense", icon: "🛡️", count: "Coming Soon" },
+  { label: "Mental Game", icon: "🧘", count: "Coming Soon" },
+];
+
+const MARQUEE_ITEMS = [
+  "🥒 Dink Smarter",
+  "⚡ Crush the Drive",
+  "🎯 Own the Kitchen",
+  "🏆 Win More Matches",
+  "💪 Train Like a Pro",
+  "🔥 Master the ATP",
+  "🧠 Outsmart Everyone",
+  "🎾 Perfect Your Serve",
 ];
 
 export default function Home() {
@@ -35,193 +55,338 @@ export default function Home() {
 
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-    }
+    if (email) setSubmitted(true);
   };
 
+  const marqueeText = [...MARQUEE_ITEMS, ...MARQUEE_ITEMS].join("   •   ");
+
   return (
-    <div className="min-h-screen bg-[#0d0f14] text-white overflow-x-hidden">
+    <div className="min-h-screen bg-[#111111] text-white">
+
+      {/* Announcement Bar */}
+      <div className="bg-[#FFE600] text-[#111111] py-2.5 px-4 text-center">
+        <p className="text-sm font-bold uppercase tracking-widest">
+          🎉 We&apos;re Launching Soon — Get Early Access &amp; Be First to Know
+        </p>
+      </div>
+
       {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 px-6 py-4 flex items-center justify-between backdrop-blur-md bg-[#0d0f14]/80 border-b border-white/5">
-        <div className="flex items-center gap-2">
-          <span className="text-2xl">🥒</span>
-          <span className="font-bold text-lg tracking-tight">
-            Pickle<span className="text-lime-400">Instructions</span>
-          </span>
-        </div>
-        <div className="text-sm text-lime-400 font-medium px-3 py-1 rounded-full border border-lime-400/30 bg-lime-400/10">
-          Coming Soon
+      <nav className="sticky top-0 z-50 bg-[#111111] border-b border-[#2a2a2a]">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <span className="text-3xl">🥒</span>
+            <div className="leading-none">
+              <span className="font-black text-2xl tracking-tight uppercase text-white">
+                Pickle
+              </span>
+              <span className="font-black text-2xl tracking-tight uppercase text-[#FFE600]">
+                Instructions
+              </span>
+            </div>
+          </div>
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wide text-[#999]">
+            <span className="hover:text-white cursor-pointer transition-colors">Instructors</span>
+            <span className="hover:text-white cursor-pointer transition-colors">Categories</span>
+            <span className="hover:text-white cursor-pointer transition-colors">About</span>
+          </div>
+          <button className="btn-primary text-sm !py-2.5 !px-5">
+            Get Early Access
+          </button>
         </div>
       </nav>
 
       {/* Hero */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center px-6 pt-24 pb-16 text-center">
-        {/* Background glow */}
-        <div className="absolute inset-0 overflow-hidden pointer-events-none">
-          <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-lime-500/10 blur-[120px]" />
-          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] rounded-full bg-lime-700/10 blur-[100px]" />
+      <section className="relative overflow-hidden border-b border-[#2a2a2a]">
+        {/* Background texture */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 right-0 w-[700px] h-[700px] rounded-full bg-[#FFE600]/5 blur-[140px] translate-x-1/3 -translate-y-1/4" />
+          <div className="absolute bottom-0 left-0 w-[500px] h-[500px] rounded-full bg-[#FFE600]/4 blur-[120px] -translate-x-1/4 translate-y-1/4" />
         </div>
 
-        {/* Floating balls */}
-        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+        <div className="relative max-w-7xl mx-auto px-6 py-20 md:py-28">
+          <div className="max-w-4xl">
+            {/* Label */}
+            <div className="animate-fade-up section-label mb-5">
+              The Home of Pickleball Instructionals
+            </div>
+
+            {/* Headline */}
+            <h1 className="animate-fade-up-1 text-5xl md:text-7xl xl:text-8xl font-black uppercase leading-none tracking-tight mb-6">
+              Your Kitchen Game
+              <br />
+              is <span className="text-[#FFE600] italic">Cooked.</span>
+              <br />
+              <span className="text-[#666] text-4xl md:text-5xl xl:text-6xl not-italic font-black">
+                Let&apos;s Fix That.
+              </span>
+            </h1>
+
+            {/* Sub */}
+            <p className="animate-fade-up-2 text-lg md:text-xl text-[#999] max-w-2xl mb-10 leading-relaxed">
+              World-class pickleball instructionals from the pros who actually
+              compete at the highest level. No fluff. No filler. Just the stuff
+              that wins matches.
+            </p>
+
+            {/* Email capture */}
+            <div className="animate-fade-up-3 max-w-lg">
+              {submitted ? (
+                <div className="border border-[#FFE600]/40 bg-[#FFE600]/10 rounded-md p-6 flex items-start gap-4">
+                  <span className="text-3xl">🎉</span>
+                  <div>
+                    <p className="font-bold text-[#FFE600] text-lg mb-1">
+                      You&apos;re locked in!
+                    </p>
+                    <p className="text-[#999] text-sm">
+                      We&apos;ll hit your inbox the second we go live. Get your paddle ready.
+                    </p>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <form onSubmit={handleSubmit} className="flex gap-2">
+                    <input
+                      type="email"
+                      required
+                      value={email}
+                      onChange={(e) => setEmail(e.target.value)}
+                      placeholder="your@email.com"
+                      className="flex-1 px-4 py-3.5 rounded-[4px] bg-[#1a1a1a] border border-[#2a2a2a] text-white placeholder:text-[#555] focus:outline-none focus:border-[#FFE600]/60 transition-all text-sm"
+                    />
+                    <button type="submit" className="btn-primary !py-3.5">
+                      Notify Me →
+                    </button>
+                  </form>
+                  <p className="mt-2.5 text-[#555] text-xs">
+                    No spam. Just pickleball. Unsubscribe anytime.
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Marquee */}
+      <div className="bg-[#FFE600] py-3 overflow-hidden">
+        <div className="animate-marquee inline-block text-[#111111] font-black uppercase text-sm tracking-widest">
+          {marqueeText}&nbsp;&nbsp;&nbsp;•&nbsp;&nbsp;&nbsp;{marqueeText}
+        </div>
+      </div>
+
+      {/* Stats bar */}
+      <div className="border-b border-[#2a2a2a] bg-[#161616]">
+        <div className="max-w-7xl mx-auto px-6 py-8 grid grid-cols-3 gap-8">
           {[
-            { top: "15%", left: "8%", delay: "0s", size: "40px" },
-            { top: "70%", left: "5%", delay: "1.5s", size: "28px" },
-            { top: "25%", right: "10%", delay: "0.8s", size: "36px" },
-            { top: "65%", right: "7%", delay: "2.2s", size: "44px" },
-            { top: "45%", left: "3%", delay: "3s", size: "22px" },
-            { top: "80%", right: "15%", delay: "1s", size: "32px" },
-          ].map((ball, i) => (
-            <div
-              key={i}
-              className="absolute animate-float opacity-20"
-              style={{
-                top: ball.top,
-                left: ball.left,
-                right: (ball as { right?: string }).right,
-                animationDelay: ball.delay,
-                fontSize: ball.size,
-              }}
-            >
-              🎾
+            { value: "36M+", label: "US Pickleball Players" },
+            { value: "Top Pros", label: "Teaching You Directly" },
+            { value: "0 BS", label: "Just Pure Game Improvement" },
+          ].map((s, i) => (
+            <div key={i} className="text-center">
+              <div className="text-2xl md:text-4xl font-black text-[#FFE600] mb-1">
+                {s.value}
+              </div>
+              <div className="text-[#666] text-xs md:text-sm uppercase tracking-wide font-semibold">
+                {s.label}
+              </div>
             </div>
           ))}
         </div>
+      </div>
 
-        {/* Badge */}
-        <div className="animate-fade-up relative z-10 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-lime-400/10 border border-lime-400/20 text-lime-400 text-sm font-medium mb-8">
-          <span className="w-2 h-2 rounded-full bg-lime-400 animate-pulse" />
-          The #1 destination for pickleball instructionals is almost here
+      {/* Instructor Spotlight */}
+      <section className="border-b border-[#2a2a2a] py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-end justify-between mb-10">
+            <div>
+              <p className="section-label mb-2">Who&apos;s Teaching You</p>
+              <h2 className="text-3xl md:text-5xl font-black uppercase">
+                Learn From the{" "}
+                <span className="text-[#FFE600]">Best in the Game</span>
+              </h2>
+            </div>
+            <p className="hidden md:block text-[#666] text-sm max-w-xs text-right leading-relaxed">
+              We&apos;re signing the pros. Coming soon — and yes, they&apos;re legit.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {INSTRUCTORS.map((instructor, i) => (
+              <div key={i} className="card-instructor cursor-pointer">
+                {/* Placeholder photo area */}
+                <div className="aspect-[3/4] bg-[#222] flex flex-col items-center justify-center gap-3 border-b border-[#2a2a2a]">
+                  <span className="text-6xl opacity-40">{instructor.emoji}</span>
+                  <span className="text-[#444] text-xs uppercase tracking-widest font-bold">
+                    Instructor
+                  </span>
+                </div>
+                <div className="p-4">
+                  <div className="text-[#FFE600] text-xs font-bold uppercase tracking-wide mb-1">
+                    {instructor.specialty}
+                  </div>
+                  <div className="font-black text-base uppercase">{instructor.name}</div>
+                  <div className="text-[#666] text-xs mt-0.5">{instructor.title}</div>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
+      </section>
 
-        {/* Headline */}
-        <h1 className="animate-fade-up-delay-1 relative z-10 text-5xl md:text-7xl font-extrabold leading-tight tracking-tight max-w-4xl mb-6">
-          Stop Guessing.
-          <br />
-          <span className="shimmer-text">Start Dominating.</span>
-        </h1>
+      {/* Categories */}
+      <section className="border-b border-[#2a2a2a] py-16 md:py-20 bg-[#0e0e0e]">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="mb-10">
+            <p className="section-label mb-2">What You&apos;ll Master</p>
+            <h2 className="text-3xl md:text-5xl font-black uppercase">
+              Every Part of Your Game,{" "}
+              <span className="text-[#FFE600]">Covered</span>
+            </h2>
+          </div>
 
-        {/* Subheadline */}
-        <p className="animate-fade-up-delay-2 relative z-10 text-lg md:text-xl text-white/60 max-w-2xl mb-10 leading-relaxed">
-          Premium pickleball instructionals from the world&apos;s top pros.
-          Master every shot, strategy, and mental edge — on your schedule.
-        </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+            {CATEGORIES.map((cat, i) => (
+              <div
+                key={i}
+                className="flex items-center gap-4 p-5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-[4px] hover:border-[#FFE600]/40 hover:bg-[#1f1f1f] transition-all cursor-pointer group"
+              >
+                <span className="text-3xl">{cat.icon}</span>
+                <div>
+                  <div className="font-bold text-sm md:text-base group-hover:text-[#FFE600] transition-colors">
+                    {cat.label}
+                  </div>
+                  <div className="text-[#555] text-xs font-semibold uppercase tracking-wide mt-0.5">
+                    {cat.count}
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-        {/* Email capture */}
-        <div className="animate-fade-up-delay-3 relative z-10 w-full max-w-md">
+      {/* Why Us */}
+      <section className="border-b border-[#2a2a2a] py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <p className="section-label mb-3">Why PickleInstructions</p>
+              <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight mb-6">
+                Pickleball is Exploding.
+                <br />
+                <span className="text-[#FFE600]">
+                  Most People Still Suck.
+                </span>
+              </h2>
+              <p className="text-[#999] text-lg leading-relaxed mb-8">
+                YouTube rabbit holes, conflicting advice from your doubles
+                partner, and one-size-fits-all clinics aren&apos;t cutting it.
+                We&apos;re building the definitive library of instructionals —
+                taught by players who actually compete at the highest level.
+              </p>
+              <button className="btn-primary">
+                Join the Waitlist →
+              </button>
+            </div>
+
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                {
+                  icon: "🎯",
+                  title: "No Filler Content",
+                  desc: "Every minute teaches you something actionable. Pros don't waste your time.",
+                },
+                {
+                  icon: "📹",
+                  title: "HD Multi-Angle",
+                  desc: "See exactly what the pros do — in slow motion, from every angle.",
+                },
+                {
+                  icon: "🏆",
+                  title: "Actual Pros",
+                  desc: "Not coaches. Not influencers. Players who compete and win at the top level.",
+                },
+                {
+                  icon: "⚡",
+                  title: "Watch Anywhere",
+                  desc: "On the couch, in the car, courtside. Your game waits for nobody.",
+                },
+              ].map((item, i) => (
+                <div
+                  key={i}
+                  className="p-5 bg-[#1a1a1a] border border-[#2a2a2a] rounded-[4px]"
+                >
+                  <span className="text-2xl block mb-3">{item.icon}</span>
+                  <div className="font-bold text-sm mb-1.5">{item.title}</div>
+                  <div className="text-[#666] text-xs leading-relaxed">
+                    {item.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Bottom CTA */}
+      <section className="py-20 md:py-28 relative overflow-hidden">
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute inset-0 bg-[#FFE600]/5" />
+        </div>
+        <div className="relative max-w-3xl mx-auto px-6 text-center">
+          <p className="section-label mb-4">Don&apos;t Get Left Behind</p>
+          <h2 className="text-4xl md:text-6xl font-black uppercase leading-tight mb-6">
+            Get On the List
+            <br />
+            <span className="text-[#FFE600]">Before We Launch</span>
+          </h2>
+          <p className="text-[#777] text-lg mb-10 max-w-xl mx-auto">
+            Early access members get first dibs on instructionals and exclusive
+            launch pricing. Your opponents probably won&apos;t sign up.
+          </p>
+
           {submitted ? (
-            <div className="flex flex-col items-center gap-3 p-6 rounded-2xl bg-lime-400/10 border border-lime-400/30">
-              <span className="text-4xl">🎉</span>
-              <p className="font-semibold text-lime-400 text-lg">
-                You&apos;re on the list!
-              </p>
-              <p className="text-white/60 text-sm">
-                We&apos;ll notify you the moment we launch. Get ready to level up.
-              </p>
+            <div className="inline-flex items-center gap-3 border border-[#FFE600]/40 bg-[#FFE600]/10 rounded-md px-8 py-5">
+              <span className="text-2xl">✅</span>
+              <span className="font-bold text-[#FFE600]">You&apos;re already on the list — nice moves.</span>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-3">
+            <form
+              onSubmit={handleSubmit}
+              className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+            >
               <input
                 type="email"
                 required
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 px-5 py-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-lime-400/50 focus:ring-2 focus:ring-lime-400/20 transition-all"
+                placeholder="your@email.com"
+                className="flex-1 px-4 py-4 rounded-[4px] bg-[#1a1a1a] border border-[#2a2a2a] text-white placeholder:text-[#555] focus:outline-none focus:border-[#FFE600]/60 transition-all text-sm"
               />
-              <button
-                type="submit"
-                className="px-6 py-4 rounded-xl bg-lime-400 hover:bg-lime-300 text-black font-bold transition-all duration-200 hover:scale-105 active:scale-95 whitespace-nowrap shadow-lg shadow-lime-400/20"
-              >
-                Notify Me
+              <button type="submit" className="btn-primary">
+                I&apos;m In →
               </button>
             </form>
           )}
-          {!submitted && (
-            <p className="mt-3 text-white/30 text-xs">
-              No spam. Unsubscribe anytime. We launch soon.
-            </p>
-          )}
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="relative px-6 py-24 max-w-6xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-4">
-            Everything you need to{" "}
-            <span className="text-lime-400">go pro</span>
-          </h2>
-          <p className="text-white/50 text-lg max-w-xl mx-auto">
-            Built for players who are serious about improving — not just playing.
-          </p>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {FEATURES.map((feature, i) => (
-            <div
-              key={i}
-              className="group p-8 rounded-2xl bg-white/[0.03] border border-white/[0.08] hover:border-lime-400/30 hover:bg-lime-400/5 transition-all duration-300"
-            >
-              <div className="text-4xl mb-4">{feature.icon}</div>
-              <h3 className="text-xl font-bold mb-2">{feature.title}</h3>
-              <p className="text-white/50 leading-relaxed">{feature.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="px-6 py-16 border-y border-white/5">
-        <div className="max-w-4xl mx-auto grid grid-cols-3 gap-8 text-center">
-          {[
-            { value: "36.5M+", label: "Pickleball players in the US" },
-            { value: "#1", label: "Fastest growing sport in America" },
-            { value: "∞", label: "Room to improve your game" },
-          ].map((stat, i) => (
-            <div key={i}>
-              <div className="text-3xl md:text-5xl font-extrabold text-lime-400 mb-2">
-                {stat.value}
-              </div>
-              <div className="text-white/40 text-sm md:text-base">{stat.label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Bottom CTA */}
-      <section className="relative px-6 py-24 text-center overflow-hidden">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-lime-500/[0.08] blur-[80px]" />
-        </div>
-        <div className="relative z-10 max-w-2xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-extrabold mb-6">
-            Ready to <span className="text-lime-400">level up?</span>
-          </h2>
-          <p className="text-white/50 text-lg mb-8">
-            Join thousands of players getting early access. Be first to know when we go live.
-          </p>
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault();
-              window.scrollTo({ top: 0, behavior: "smooth" });
-            }}
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-lime-400 hover:bg-lime-300 text-black font-bold text-lg transition-all duration-200 hover:scale-105 active:scale-95 shadow-xl shadow-lime-400/20"
-          >
-            Get Early Access <span>→</span>
-          </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="px-6 py-8 border-t border-white/5 text-center text-white/20 text-sm">
-        <div className="flex items-center justify-center gap-2 mb-2">
-          <span>🥒</span>
-          <span className="font-semibold text-white/40">PickleInstructions</span>
+      <footer className="border-t border-[#2a2a2a] bg-[#0e0e0e] px-6 py-10">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex items-center gap-2">
+            <span className="text-2xl">🥒</span>
+            <span className="font-black text-lg uppercase tracking-tight">
+              Pickle<span className="text-[#FFE600]">Instructions</span>
+            </span>
+          </div>
+          <p className="text-[#444] text-sm">
+            © {new Date().getFullYear()} PickleInstructions. All rights reserved.
+          </p>
+          <p className="text-[#444] text-xs uppercase tracking-widest font-semibold">
+            pickleinstructions.com
+          </p>
         </div>
-        <p>© {new Date().getFullYear()} PickleInstructions. All rights reserved.</p>
       </footer>
     </div>
   );
