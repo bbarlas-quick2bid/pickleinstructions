@@ -1,41 +1,48 @@
 <svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <radialGradient id="ballGrad" cx="35%" cy="28%" r="70%">
-      <stop offset="0%"   stop-color="#F6FF7A"/>
-      <stop offset="30%"  stop-color="#D4E832"/>
-      <stop offset="75%"  stop-color="#9DB81A"/>
-      <stop offset="100%" stop-color="#637808"/>
+    <radialGradient id="g" cx="33%" cy="28%" r="72%">
+      <stop offset="0%"   stop-color="#D9EE6A"/>
+      <stop offset="25%"  stop-color="#B8D93A"/>
+      <stop offset="65%"  stop-color="#96C020"/>
+      <stop offset="100%" stop-color="#5E8008"/>
     </radialGradient>
-    <radialGradient id="holeDepth" cx="30%" cy="30%" r="70%">
-      <stop offset="0%"   stop-color="#2a3d04"/>
-      <stop offset="100%" stop-color="#0f1801"/>
+    <radialGradient id="rim" cx="50%" cy="50%" r="50%">
+      <stop offset="58%"  stop-color="#000" stop-opacity="0"/>
+      <stop offset="100%" stop-color="#000" stop-opacity="0.38"/>
     </radialGradient>
-    <radialGradient id="rimDark" cx="50%" cy="50%" r="50%">
-      <stop offset="60%"  stop-color="black" stop-opacity="0"/>
-      <stop offset="100%" stop-color="black" stop-opacity="0.45"/>
-    </radialGradient>
-    <clipPath id="ballClip">
-      <circle cx="50" cy="50" r="46"/>
-    </clipPath>
+    <filter id="hb" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="4.5"/>
+    </filter>
+    <clipPath id="c"><circle cx="50" cy="50" r="46"/></clipPath>
   </defs>
-
-  <circle cx="50" cy="50" r="46" fill="url(#ballGrad)"/>
-
-  <g clip-path="url(#ballClip)">
-    <circle cx="50" cy="26" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="68" cy="34" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="74" cy="53" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="64" cy="70" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="46" cy="76" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="29" cy="66" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="24" cy="47" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="34" cy="31" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="53" cy="50" r="6.2" fill="url(#holeDepth)"/>
-    <circle cx="38" cy="53" r="6.2" fill="url(#holeDepth)"/>
+  <circle cx="50" cy="50" r="46" fill="url(#g)"/>
+  <g clip-path="url(#c)">
+    <circle cx="48" cy="13" r="6.5" fill="white"/><circle cx="49.4" cy="15.3" r="5.3" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="64" cy="13" r="5"   fill="white"/><circle cx="65.1" cy="14.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="33" cy="18" r="5"   fill="white"/><circle cx="34.1" cy="19.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="18" cy="30" r="6"   fill="white"/><circle cx="19.3" cy="32.1" r="4.9" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="30" cy="25" r="5"   fill="white"/><circle cx="31.1" cy="26.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="74" cy="24" r="6"   fill="white"/><circle cx="75.3" cy="26.1" r="4.9" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="84" cy="37" r="5.5" fill="white"/><circle cx="85.2" cy="38.9" r="4.5" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="41" cy="37" r="8"   fill="white"/><circle cx="42.8" cy="39.8" r="6.6" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="58" cy="35" r="6.5" fill="white"/><circle cx="59.4" cy="37.3" r="5.3" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="13" cy="46" r="5.5" fill="white"/><circle cx="14.2" cy="47.9" r="4.5" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="16" cy="61" r="5"   fill="white"/><circle cx="17.1" cy="62.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="29" cy="50" r="7"   fill="white"/><circle cx="30.5" cy="52.5" r="5.7" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="53" cy="51" r="9"   fill="white"/><circle cx="55"   cy="54.2" r="7.4" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="72" cy="47" r="6.5" fill="white"/><circle cx="73.4" cy="49.3" r="5.3" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="83" cy="58" r="5.5" fill="white"/><circle cx="84.2" cy="59.9" r="4.5" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="42" cy="65" r="7.5" fill="white"/><circle cx="43.7" cy="67.6" r="6.2" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="63" cy="63" r="7"   fill="white"/><circle cx="64.5" cy="65.5" r="5.7" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="21" cy="72" r="6"   fill="white"/><circle cx="22.3" cy="74.1" r="4.9" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="35" cy="78" r="5.5" fill="white"/><circle cx="36.2" cy="79.9" r="4.5" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="52" cy="76" r="6.5" fill="white"/><circle cx="53.4" cy="78.3" r="5.3" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="69" cy="75" r="5.5" fill="white"/><circle cx="70.2" cy="76.9" r="4.5" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="80" cy="67" r="5"   fill="white"/><circle cx="81.1" cy="68.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="43" cy="87" r="5"   fill="white"/><circle cx="44.1" cy="88.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
+    <circle cx="59" cy="85" r="5"   fill="white"/><circle cx="60.1" cy="86.8" r="4.1" fill="#3a5a06" opacity="0.38"/>
   </g>
-
-  <circle cx="50" cy="50" r="46" fill="url(#rimDark)" clip-path="url(#ballClip)"/>
-  <ellipse cx="37" cy="31" rx="14" ry="9" fill="white" opacity="0.38" transform="rotate(-30 37 31)" clip-path="url(#ballClip)"/>
-  <ellipse cx="42" cy="27" rx="5" ry="3" fill="white" opacity="0.55" transform="rotate(-30 42 27)" clip-path="url(#ballClip)"/>
-  <circle cx="50" cy="50" r="46" fill="none" stroke="#5a7a0a" stroke-width="1.2"/>
+  <circle cx="50" cy="50" r="46" fill="url(#rim)" clip-path="url(#c)"/>
+  <ellipse cx="36" cy="34" rx="22" ry="16" fill="white" opacity="0.28" filter="url(#hb)" clip-path="url(#c)" transform="rotate(-15 36 34)"/>
+  <ellipse cx="34" cy="27" rx="9" ry="5.5" fill="white" opacity="0.55" clip-path="url(#c)" transform="rotate(-20 34 27)"/>
 </svg>
