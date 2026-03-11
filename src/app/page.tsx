@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import PickleballIcon from "@/components/PickleballIcon";
+import Image from "next/image";
 
 const INSTRUCTORS = [
   {
@@ -75,7 +75,7 @@ export default function Home() {
       <nav className="sticky top-0 z-50 bg-[#111111] border-b border-[#2a2a2a]">
         <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            <PickleballIcon size={36} />
+            <Image src="/pickleball.png" alt="Pickleball" width={36} height={36} />
             <div className="leading-none">
               <span className="font-black text-2xl tracking-tight uppercase text-white">
                 Pickle
@@ -376,7 +376,7 @@ export default function Home() {
       <footer className="border-t border-[#2a2a2a] bg-[#0e0e0e] px-6 py-10">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
           <div className="flex items-center gap-2">
-            <PickleballIcon size={28} />
+            <Image src="/pickleball.png" alt="Pickleball" width={28} height={28} />
             <span className="font-black text-lg uppercase tracking-tight">
               Pickle<span className="text-[#FFE600]">Instructions</span>
             </span>
