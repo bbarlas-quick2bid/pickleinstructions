@@ -1,13 +1,13 @@
 @import "tailwindcss";
 
 :root {
-  --background: #111111;
-  --foreground: #ffffff;
+  --background: #ffffff;
+  --foreground: #1a1a1a;
   --yellow: #FFE600;
   --yellow-dark: #e6cf00;
-  --gray-card: #1a1a1a;
-  --gray-border: #2a2a2a;
-  --gray-muted: #666666;
+  --gray-card: #f9fafb;
+  --gray-border: #e5e7eb;
+  --gray-muted: #6b7280;
 }
 
 @theme inline {
@@ -38,8 +38,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(255, 230, 0, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(255, 230, 0, 0.6); }
+  0%, 100% { box-shadow: 0 0 20px rgba(255, 230, 0, 0.4); }
+  50% { box-shadow: 0 0 40px rgba(255, 230, 0, 0.7); }
 }
 
 .animate-marquee {
@@ -60,7 +60,7 @@ body {
   align-items: center;
   gap: 8px;
   background: #FFE600;
-  color: #111111;
+  color: #1a1a1a;
   font-weight: 800;
   padding: 14px 32px;
   border-radius: 4px;
@@ -73,7 +73,7 @@ body {
 }
 
 .btn-primary:hover {
-  background: #fff176;
+  background: #ffe926;
   transform: translateY(-1px);
   animation: pulse-glow 1.5s ease-in-out infinite;
 }
@@ -87,18 +87,19 @@ body {
   font-weight: 700;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: #FFE600;
+  color: #9a7600;
 }
 
 .card-instructor {
-  background: #1a1a1a;
-  border: 1px solid #2a2a2a;
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
   border-radius: 6px;
   overflow: hidden;
-  transition: border-color 0.2s ease, transform 0.2s ease;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .card-instructor:hover {
   border-color: #FFE600;
   transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
 }
