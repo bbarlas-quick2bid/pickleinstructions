@@ -80,12 +80,12 @@ export default function Home() {
               <span className="font-black text-2xl tracking-tight uppercase text-[#1a1a1a]">
                 Pickle
               </span>
-              <span className="font-black text-2xl tracking-tight uppercase text-[#FFE600]">
+              <span className="font-black text-2xl tracking-tight uppercase text-[#C9A000]">
                 Instructions
               </span>
             </div>
           </div>
-          <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wide text-gray-400">
+          <div className="hidden md:flex items-center gap-8 text-sm font-semibold uppercase tracking-wide text-gray-600">
             <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Instructors</span>
             <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">Categories</span>
             <span className="hover:text-[#1a1a1a] cursor-pointer transition-colors">About</span>
@@ -112,14 +112,14 @@ export default function Home() {
             <h1 className="animate-fade-up-1 text-5xl md:text-7xl xl:text-8xl font-black uppercase leading-none tracking-tight mb-6">
               Your Kitchen Game
               <br />
-              is <span className="text-[#FFE600]" style={{WebkitTextStroke: '2px #c8a800'}}>Cooked.</span>
+              is <span className="text-[#C9A000]">Cooked.</span>
               <br />
-              <span className="text-gray-400 text-4xl md:text-5xl xl:text-6xl not-italic font-black">
+              <span className="text-gray-600 text-4xl md:text-5xl xl:text-6xl not-italic font-black">
                 Let&apos;s Fix That.
               </span>
             </h1>
 
-            <p className="animate-fade-up-2 text-lg md:text-xl text-gray-500 max-w-2xl mb-10 leading-relaxed">
+            <p className="animate-fade-up-2 text-lg md:text-xl text-gray-700 max-w-2xl mb-10 leading-relaxed">
               World-class pickleball instructionals from the pros who actually
               compete at the highest level. No fluff. No filler. Just the stuff
               that wins matches.
@@ -130,10 +130,10 @@ export default function Home() {
                 <div className="border border-[#FFE600]/60 bg-[#FFE600]/10 rounded-md p-6 flex items-start gap-4">
                   <span className="text-3xl">🎉</span>
                   <div>
-                    <p className="font-bold text-[#9a7600] text-lg mb-1">
+                    <p className="font-bold text-[#C9A000] text-lg mb-1">
                       You&apos;re locked in!
                     </p>
-                    <p className="text-gray-500 text-sm">
+                    <p className="text-gray-700 text-sm">
                       We&apos;ll hit your inbox the second we go live. Get your paddle ready.
                     </p>
                   </div>
@@ -147,13 +147,13 @@ export default function Home() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="your@email.com"
-                      className="flex-1 px-4 py-3.5 rounded-[4px] bg-white border border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all text-sm"
+                      className="flex-1 px-4 py-3.5 rounded-[4px] bg-white border border-gray-300 text-[#1a1a1a] placeholder:text-gray-600 focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all text-sm"
                     />
                     <button type="submit" className="btn-primary !py-3.5">
                       Notify Me →
                     </button>
                   </form>
-                  <p className="mt-2.5 text-gray-400 text-xs">
+                  <p className="mt-2.5 text-gray-600 text-xs">
                     No spam. Just pickleball. Unsubscribe anytime.
                   </p>
                 </>
@@ -182,7 +182,7 @@ export default function Home() {
               <div className="text-2xl md:text-4xl font-black text-[#1a1a1a] mb-1">
                 {s.value}
               </div>
-              <div className="text-gray-500 text-xs md:text-sm uppercase tracking-wide font-semibold">
+              <div className="text-gray-700 text-xs md:text-sm uppercase tracking-wide font-semibold">
                 {s.label}
               </div>
             </div>
@@ -198,10 +198,10 @@ export default function Home() {
               <p className="section-label mb-2">Who&apos;s Teaching You</p>
               <h2 className="text-3xl md:text-5xl font-black uppercase text-[#1a1a1a]">
                 Learn From the{" "}
-                <span className="text-[#FFE600]" style={{WebkitTextStroke: '1.5px #c8a800'}}>Best in the Game</span>
+                <span className="text-[#C9A000]">Best in the Game</span>
               </h2>
             </div>
-            <p className="hidden md:block text-gray-400 text-sm max-w-xs text-right leading-relaxed">
+            <p className="hidden md:block text-gray-600 text-sm max-w-xs text-right leading-relaxed">
               We&apos;re signing the pros. Coming soon — and yes, they&apos;re legit.
             </p>
           </div>
@@ -211,16 +211,16 @@ export default function Home() {
               <div key={i} className="card-instructor cursor-pointer">
                 <div className="aspect-[3/4] bg-gray-100 flex flex-col items-center justify-center gap-3 border-b border-gray-200">
                   <span className="text-6xl opacity-30">{instructor.emoji}</span>
-                  <span className="text-gray-400 text-xs uppercase tracking-widest font-bold">
+                  <span className="text-gray-600 text-xs uppercase tracking-widest font-bold">
                     Instructor
                   </span>
                 </div>
                 <div className="p-4">
-                  <div className="text-[#9a7600] text-xs font-bold uppercase tracking-wide mb-1">
+                  <div className="text-[#C9A000] text-xs font-bold uppercase tracking-wide mb-1">
                     {instructor.specialty}
                   </div>
                   <div className="font-black text-base uppercase text-[#1a1a1a]">{instructor.name}</div>
-                  <div className="text-gray-400 text-xs mt-0.5">{instructor.title}</div>
+                  <div className="text-gray-600 text-xs mt-0.5">{instructor.title}</div>
                 </div>
               </div>
             ))}
@@ -235,7 +235,7 @@ export default function Home() {
             <p className="section-label mb-2">What You&apos;ll Master</p>
             <h2 className="text-3xl md:text-5xl font-black uppercase text-[#1a1a1a]">
               Every Part of Your Game,{" "}
-              <span className="text-[#FFE600]" style={{WebkitTextStroke: '1.5px #c8a800'}}>Covered</span>
+              <span className="text-[#C9A000]">Covered</span>
             </h2>
           </div>
 
@@ -247,10 +247,10 @@ export default function Home() {
               >
                 <span className="text-3xl">{cat.icon}</span>
                 <div>
-                  <div className="font-bold text-sm md:text-base text-[#1a1a1a] group-hover:text-[#9a7600] transition-colors">
+                  <div className="font-bold text-sm md:text-base text-[#1a1a1a] group-hover:text-[#C9A000] transition-colors">
                     {cat.label}
                   </div>
-                  <div className="text-gray-400 text-xs font-semibold uppercase tracking-wide mt-0.5">
+                  <div className="text-gray-600 text-xs font-semibold uppercase tracking-wide mt-0.5">
                     {cat.count}
                   </div>
                 </div>
@@ -269,11 +269,11 @@ export default function Home() {
               <h2 className="text-3xl md:text-5xl font-black uppercase leading-tight mb-6 text-[#1a1a1a]">
                 Pickleball is Exploding.
                 <br />
-                <span className="text-[#FFE600]" style={{WebkitTextStroke: '1.5px #c8a800'}}>
+                <span className="text-[#C9A000]">
                   Most People Still Suck.
                 </span>
               </h2>
-              <p className="text-gray-500 text-lg leading-relaxed mb-8">
+              <p className="text-gray-700 text-lg leading-relaxed mb-8">
                 YouTube rabbit holes, conflicting advice from your doubles
                 partner, and one-size-fits-all clinics aren&apos;t cutting it.
                 We&apos;re building the definitive library of instructionals —
@@ -313,7 +313,7 @@ export default function Home() {
                 >
                   <span className="text-2xl block mb-3">{item.icon}</span>
                   <div className="font-bold text-sm mb-1.5 text-[#1a1a1a]">{item.title}</div>
-                  <div className="text-gray-500 text-xs leading-relaxed">
+                  <div className="text-gray-700 text-xs leading-relaxed">
                     {item.desc}
                   </div>
                 </div>
@@ -333,9 +333,9 @@ export default function Home() {
           <h2 className="text-4xl md:text-6xl font-black uppercase leading-tight mb-6 text-[#1a1a1a]">
             Get On the List
             <br />
-            <span className="text-[#FFE600]" style={{WebkitTextStroke: '1.5px #c8a800'}}>Before We Launch</span>
+            <span className="text-[#C9A000]">Before We Launch</span>
           </h2>
-          <p className="text-gray-500 text-lg mb-10 max-w-xl mx-auto">
+          <p className="text-gray-700 text-lg mb-10 max-w-xl mx-auto">
             Early access members get first dibs on instructionals and exclusive
             launch pricing. Your opponents probably won&apos;t sign up.
           </p>
@@ -343,7 +343,7 @@ export default function Home() {
           {submitted ? (
             <div className="inline-flex items-center gap-3 border border-[#FFE600]/60 bg-[#FFE600]/10 rounded-md px-8 py-5">
               <span className="text-2xl">✅</span>
-              <span className="font-bold text-[#9a7600]">You&apos;re already on the list — nice moves.</span>
+              <span className="font-bold text-[#C9A000]">You&apos;re already on the list — nice moves.</span>
             </div>
           ) : (
             <form
@@ -356,7 +356,7 @@ export default function Home() {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="your@email.com"
-                className="flex-1 px-4 py-4 rounded-[4px] bg-white border border-gray-300 text-[#1a1a1a] placeholder:text-gray-400 focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all text-sm"
+                className="flex-1 px-4 py-4 rounded-[4px] bg-white border border-gray-300 text-[#1a1a1a] placeholder:text-gray-600 focus:outline-none focus:border-[#FFE600] focus:ring-2 focus:ring-[#FFE600]/20 transition-all text-sm"
               />
               <button type="submit" className="btn-primary">
                 I&apos;m In →
@@ -372,13 +372,13 @@ export default function Home() {
           <div className="flex items-center gap-2">
             <Image src="/pickleball.png" alt="Pickleball" width={28} height={28} />
             <span className="font-black text-lg uppercase tracking-tight text-[#1a1a1a]">
-              Pickle<span className="text-[#FFE600]" style={{WebkitTextStroke: '1px #c8a800'}}>Instructions</span>
+              Pickle<span className="text-[#C9A000]">Instructions</span>
             </span>
           </div>
-          <p className="text-gray-400 text-sm">
+          <p className="text-gray-600 text-sm">
             © {new Date().getFullYear()} PickleInstructions. All rights reserved.
           </p>
-          <p className="text-gray-400 text-xs uppercase tracking-widest font-semibold">
+          <p className="text-gray-600 text-xs uppercase tracking-widest font-semibold">
             pickleinstructions.com
           </p>
         </div>
